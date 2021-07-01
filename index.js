@@ -29,6 +29,9 @@ db.once('open', function() {
 
 const app = express();
 
+// heroku deploy trust proxy
+app.set("trust proxy", 1);
+
 // cookie handling
 app.use(cookieParser());
 // session connection
@@ -46,7 +49,8 @@ app.use(session({
     resave: false, 
     // saveUninitialized: true,
     cookie: { 
-        // secure: true,
+        sameSite: process.env.NODE_ENV === "production" ? 'none' : 'lax', // must be 'none' to enable cross-site delivery
+        secure: process.env.NODE_ENV === "production", // must be true if sameSite='none'
         httpOnly: true,
         maxAge: 1000 * 60 * 60 * 24 * 7
     } 

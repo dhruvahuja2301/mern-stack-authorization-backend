@@ -17,8 +17,8 @@ const protectedRouter = require("./routes/protected");
 const refreshTokenRouter = require("./routes/refreshToken");
 
 // Mongodb connection
-// const dbUrl = process.env.DB_URL || 'mongodb://localhost:27017/login'; 
-const dbUrl = 'mongodb://localhost:27017/login'; 
+const dbUrl = process.env.DB_URL || 'mongodb://localhost:27017/login'; 
+// const dbUrl = 'mongodb://localhost:27017/login'; 
 mongoose.connect(dbUrl, {useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true, useFindAndModify: false});
 
 const db = mongoose.connection;

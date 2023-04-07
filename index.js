@@ -82,7 +82,7 @@ app.use('/refresh_token', refreshTokenRouter)
 
 
 app.get("/", (req,res) => {
-    return "Hello World"
+    res.send('hello world')
 })
 // Listen on port
 const port = process.env.PORT || 4000

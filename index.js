@@ -49,8 +49,8 @@ app.use(session({
     resave: false, 
     // saveUninitialized: true,
     cookie: { 
-        sameSite: process.env.NODE_ENV === "production" ? 'none' : 'lax', // must be 'none' to enable cross-site delivery
-        secure: process.env.NODE_ENV === "production", // must be true if sameSite='none'
+        // sameSite: process.env.NODE_ENV === "production" ? 'none' : 'lax', // must be 'none' to enable cross-site delivery
+        // secure: process.env.NODE_ENV === "production", // must be true if sameSite='none'
         // httpOnly: true,
         maxAge: 1000 * 60 * 60 * 24 * 7
     } 

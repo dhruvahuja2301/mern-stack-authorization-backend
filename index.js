@@ -81,7 +81,9 @@ app.use('/protected', auth, protectedRouter)
 app.use('/refresh_token', refreshTokenRouter)
 
 
-
+app.get("/", (req,res) => {
+    return "Hello World"
+})
 // Listen on port
 const port = process.env.PORT || 4000
 app.listen(port, ()=>{
